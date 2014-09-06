@@ -5,10 +5,17 @@
   "description": "perform CSS transitions to and from 'auto'",
   "repository": "https://github.com/75lb/transition-to-from-auto.git",
   "main": "./lib/transition-to-from-auto.js",
-  "keywords": ["css", "transition", "auto"],
+  "keywords": [
+    "css",
+    "transition",
+    "auto"
+  ],
   "scripts": {
     "test": "tape test/*.js",
     "lint": "jshint lib/*.js test/*.js; echo",
     "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
+  },
+  "devDependencies": {
+    "requirejs": "^2.1.14"
   }
 }
