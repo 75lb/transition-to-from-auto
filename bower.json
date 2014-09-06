@@ -1,0 +1,6 @@
+{
+  "name": "_gh-pages",
+  "dependencies": {
+    "transition-to-from-auto": "*"
+  }
+}
