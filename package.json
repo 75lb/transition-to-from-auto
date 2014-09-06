@@ -1,0 +1,20 @@
+{
+  "name": "to-from-auto",
+  "author": "Lloyd Brookes <75pound@gmail.com>",
+  "version": "0.0.0",
+  "description": "to-from-auto",
+  "repository": "https://github.com/75lb/to-from-auto.git",
+  "main": "./lib/to-from-auto.js",
+  "bin": {
+    "to-from-auto": "bin/cli.js"
+  },
+  "keywords": [],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "tape test/*.js",
+    "lint": "jshint lib/*.js bin/*.js test/*.js; echo",
+    "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
+  }
+}
