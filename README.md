@@ -7,8 +7,13 @@
 
 ##Install
 ```sh
-$ npm install -g transition-to-from-auto
+$ npm install transition-to-from-auto --save
 ```
 *Mac / Linux users may need to run with `sudo`*.
+
+or 
+```sh
+$ bower install transition-to-from-auto --save
+```
 
 *documented by [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown)*
