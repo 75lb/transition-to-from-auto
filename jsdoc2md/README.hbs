@@ -5,6 +5,8 @@
 #transition-to-from-auto
 At the moment, CSS transitions to and from `auto` are broken (see [webkit](https://bugs.webkit.org/show_bug.cgi?id=16020) and [firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=571344) bugs). This module is a workaround. 
 
+Compatible with CommonJS (browserify), AMD (requirejs) or plain JS. 
+
 ##Synopsis
 ```js
 ttfa.fromAuto(".myElement", "width", "100px");
@@ -18,11 +20,13 @@ ttfa.toAuto(".myElement", "width");
 ```sh
 $ npm install transition-to-from-auto --save
 ```
-*Mac / Linux users may need to run with `sudo`*.
-
 or 
 ```sh
 $ bower install transition-to-from-auto --save
 ```
+*Mac / Linux users may need to run with `sudo`*.
+
+##Usage
+See the [example](https://github.com/75lb/transition-to-from-auto/tree/master/example) folder for examples.
 
 *documented by [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown)*
