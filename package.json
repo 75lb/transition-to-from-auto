@@ -1,20 +1,14 @@
 {
-  "name": "to-from-auto",
+  "name": "transition-to-from-auto",
   "author": "Lloyd Brookes <75pound@gmail.com>",
-  "version": "0.0.0",
-  "description": "to-from-auto",
-  "repository": "https://github.com/75lb/to-from-auto.git",
-  "main": "./lib/to-from-auto.js",
-  "bin": {
-    "to-from-auto": "bin/cli.js"
-  },
-  "keywords": [],
-  "engines": {
-    "node": ">=0.10.0"
-  },
+  "version": "0.1.0",
+  "description": "perform CSS transitions to and from 'auto'",
+  "repository": "https://github.com/75lb/transition-to-from-auto.git",
+  "main": "./lib/transition-to-from-auto.js",
+  "keywords": ["css", "transition", "auto"],
   "scripts": {
     "test": "tape test/*.js",
-    "lint": "jshint lib/*.js bin/*.js test/*.js; echo",
+    "lint": "jshint lib/*.js test/*.js; echo",
     "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
   }
 }
