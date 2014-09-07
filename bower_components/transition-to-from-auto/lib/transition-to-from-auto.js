@@ -2,15 +2,13 @@
     "use strict";
 
     var $ = document.querySelector.bind(document);
-    var transition = "all 0.4s ease-in-out";
-    var isInTransition = false;
 
-    function fromAuto(selector, property, to){
-        var el = $(selector);
-        property = property || "width";
+    function fromAuto(options){
+        var el = $(options.selector);
+        var to = options.to;
+        var property = options.property;
 
         if (el.dataset.ttfaInTransition === "true") return;
-
         var currValue = getComputedStyle(el)[property];
         if (currValue === to) return;
         
@@ -19,8 +17,8 @@
         el.style[property] = currValue;
         el.offsetWidth; // force repaint
 
-        /* important so set the transition late (not in CSS), to avoid FOUC */
-        el.style.transition = transition;
+        /* important so set the transition late (not in CSS), to avoid transition flashes in Safari */
+        el.style.transition = options.style;
         el.style[property] = to;
         el.addEventListener("transitionend", function transitionEnd(event) {
             delete el.dataset.ttfaInTransition;
@@ -29,23 +27,23 @@
         });
     }
 
-    function toAuto(selector, property){
-        var el = $(selector);
-        property = property || "width";
+    function toAuto(options){
+        var el = $(options.selector);
+        var property = options.property;
 
         if(el.dataset.ttfaInTransition === "true") return;
-        var prevValue = el.style[property];
-        if (prevValue === "auto" || prevValue === "") return;
+        var currValue = el.style[property];
+        if (currValue === "auto" || currValue === "") return;
 
         el.dataset.ttfaInTransition = true;
 
         el.style[property] = "auto";
         var endValue = getComputedStyle(el)[property];
-        el.style[property] = prevValue;
+        el.style[property] = currValue;
         el.offsetWidth; // force repaint
 
-        /* important so set the transition late (not in CSS), to avoid FOUC */
-        el.style.transition = transition;
+        /* important so set the transition late (not in CSS), to avoid transition flashes in Safari */
+        el.style.transition = options.style;
         el.style[property] = endValue;
         el.addEventListener("transitionend", function transitionEnd(event) {
             delete el.dataset.ttfaInTransition;
@@ -55,16 +53,24 @@
         });
     }
 
-    var ttfa = {
-        fromAuto: fromAuto,
-        toAuto: toAuto
-    };
+    function transition(options){
+        options.property = options.property || "width";
+        options.style = options.style || "all 0.4s ease-in-out";
+        
+        if (options.to === "auto"){
+            toAuto(options);
+        } else {
+            fromAuto(options);
+        }
+    }
 
     if (typeof module !== "undefined" && module.exports){
-        module.exports = ttfa;
+        module.exports = transition;
     } else if (typeof define === "function" && define.amd){
-        define(ttfa);
+        define(function(){
+            return transition;
+        });
     } else if (typeof window !== "undefined"){
-        window.ttfa = ttfa;
+        window.transition = transition;
     }
 })();
