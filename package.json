@@ -1,7 +1,7 @@
 {
   "name": "transition-to-from-auto",
   "author": "Lloyd Brookes <75pound@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "perform CSS transitions to and from 'auto'",
   "repository": "https://github.com/75lb/transition-to-from-auto.git",
   "main": "./lib/transition-to-from-auto.js",
