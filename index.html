@@ -4,31 +4,67 @@
   <title>CSS Transition to and from 'auto'</title>
   <script src="bower_components/transition-to-from-auto/lib/transition-to-from-auto.js"></script>
   <style type="text/css">
-  p.demo { 
+  figure { display: inline-block; vertical-align: top; margin: 0 2em 0 0; }
+  p.before { 
+    background-color: #eee; 
+    width: 530px;
+    font-size: 16pt;
+    overflow: hidden;
+    transition: height 0.4s ease-in-out;
+  }
+
+  /* transition must not be added in the CSS, it is added by the module.
+  This is necessary for Safari support */
+  p.after { 
     background-color: #eee; 
     width: 530px;
     font-size: 16pt;
     overflow: hidden;
   }
+  
+  p.intro { width: 50em; font-size: 14pt; }
+  figcaption { }
   </style>
 </head>
 <body>
   <h1>CSS transitions to and from "auto"</h1>
-  <p>
-    This module was inspired by Nikita Vasilyev's <a href="http://n12v.com/css-transition-to-from-auto/">solution</a>
+  <p class="intro">
+    This module was inspired by Nikita Vasilyev's <a href="http://n12v.com/css-transition-to-from-auto/">solution</a>. The paragraph below on the left demonstrates what happens when you transition to and from <code>"auto"</code>. The right-hand paragraph demonstrates the same using the <code><a href="https://github.com/75lb/transition-to-from-auto">transition-to-from-auto</a></code> module. 
   </p>
-  <button id="btnFrom">transition from "auto" to "100px"</button>
-  <button id="btnTo">transition from "100px" to "auto"</button>
-  <button id="btnAdd">Add more text</button>
-  <p class="demo">"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"</p>
+
+  <figure>
+    <figcaption><h3>Native</h3></figcaption>
+    <button id="btnFromBefore">transition from "auto" to "100px"</button>
+    <button id="btnToBefore">transition from "100px" to "auto"</button>
+    <button id="btnAddBefore">Add more text</button>
+    <p class="before">"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"</p>
+  </figure>
+
+  <figure>
+    <figcaption><h3>Using module</h3></figcaption>
+    <button id="btnFrom">transition from "auto" to "100px"</button>
+    <button id="btnTo">transition from "100px" to "auto"</button>
+    <button id="btnAdd">Add more text</button>
+    <p class="after">"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"</p>
+  </figure>
   
   <script type="text/javascript">
   var $ = document.querySelector.bind(document);
-  var selector = "p.demo";
-  
+
+  $("#btnFromBefore").addEventListener("click", function(){
+    $("p.before").style.height = "100px";
+  });
+  $("#btnToBefore").addEventListener("click", function(){
+    $("p.before").style.height = "auto";
+  });
+  $("#btnAddBefore").addEventListener("click", function(){
+    $("p.before").textContent += " But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?";
+  });
+
+
   $("#btnFrom").addEventListener("click", function(){
     transition({
-      selector: selector,
+      selector: "p.after",
       property: "height",
       style: "all 0.4s ease-in-out",
       to: "100px"
@@ -36,13 +72,13 @@
   });
   $("#btnTo").addEventListener("click", function(){
     transition({
-      selector: selector,
+      selector: "p.after",
       property: "height",
       to: "auto"
     });
   });
   $("#btnAdd").addEventListener("click", function(){
-    $(selector).textContent += " But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?";
+    $("p.after").textContent += " But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?";
   });
   </script>
   
