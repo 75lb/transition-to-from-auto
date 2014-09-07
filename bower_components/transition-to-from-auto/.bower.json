@@ -27,11 +27,11 @@
     "example",
     "jsdoc2md"
   ],
-  "_release": "ecddea5d10",
+  "_release": "3780f42c2b",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "ecddea5d1062f335cf35ee925cbdba60717721bf"
+    "commit": "3780f42c2b47f89334b8c083684cef26e320d276"
   },
   "_source": "git://github.com/75lb/transition-to-from-auto.git",
   "_target": "*",
