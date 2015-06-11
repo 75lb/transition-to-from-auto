@@ -23,15 +23,14 @@
 
   $("#btnFrom").addEventListener("click", function(){
     transition({
-      selector: "p",
+      element: "p",
       property: "height",
-      style: "all 0.4s ease-in-out",
       to: "100px"
     });
   });
   $("#btnTo").addEventListener("click", function(){
     transition({
-      selector: "p",
+      element: "p",
       property: "height",
       to: "auto"
     });
