@@ -6,7 +6,7 @@
     "globalstrict": false,
     "indent": 4,
     "laxbreak": true,
-    "maxparams": 3,
+    "maxparams": 5,
     "multistr": true,
     "newcap": true,
     "node": true,
