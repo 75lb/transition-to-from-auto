@@ -7,7 +7,7 @@ This module exports a single function to transition an element either to or from
 
 [Demo](http://75lb.github.io/transition-to-from-auto/).
 
-Compatible with CommonJS (browserify), AMD (requirejs) or plain JS. 
+Compatible with CommonJS (browserify), AMD (requirejs) or plain JS.
 
 ## Synopsis
 ```js
@@ -43,11 +43,11 @@ transition to and from auto
 | --- | --- | --- |
 | options | <code>Object</code> | the options |
 | options.element | <code>mixed</code> | the element or selector |
-| options.to | <code>string</code> | the value to transition to |
-| [options.property] | <code>string</code> | the CSS property to transition, defaults to `width` |
+| options.val | <code>string</code> | the transition destination |
+| [options.prop] | <code>string</code> | the CSS property to transition, defaults to `width` |
 | [options.style] | <code>string</code> | the CSS transition style, defaults to `all 0.4s ease-in-out` |
 
 
-* * * 
+* * *
 
 &copy; 2015 Lloyd Brookes <75pound@gmail.com>. Documented by [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown).

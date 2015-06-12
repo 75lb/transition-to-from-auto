@@ -1,38 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Simple</title>
-  <script src="../lib/transition-to-from-auto.js"></script>
-  <style type="text/css">
+  <title>Transition-to-from-auto</title>
+  <style>
+  body {
+    font-family: Tahoma, Geneva, sans-serif;
+  }
+  .header a {
+    text-decoration: none;
+    vertical-align: bottom;
+    color: inherit;
+  }
+
+  .header iframe {
+    vertical-align: bottom;
+  }
+
   p {
     background-color: #eee;
     width: 530px;
     font-size: 16pt;
     overflow: hidden;
+    height: 120px;
   }
   </style>
 </head>
 <body>
+  <h1 class="header">
+    <a href="https://github.com/75lb/transition-to-from-auto">Transition-to-from-auto</a>
+    <iframe
+      src="https://ghbtns.com/github-btn.html?user=75lb&repo=transition-to-from-auto&type=star&count=true"
+      frameborder="0" scrolling="0" width="90px" height="25px"></iframe>
+  </h1>
   <button id="btnFrom">transition from "auto" to "100px"</button>
   <button id="btnTo">transition from "100px" to "auto"</button>
   <button id="btnAdd">Add more text</button>
   <p>"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"</p>
 
-  <script type="text/javascript">
+  <script src="../lib/transition-to-from-auto.js"></script>
+  <script>
   var $ = document.querySelector.bind(document);
 
   $("#btnFrom").addEventListener("click", function(){
     transition({
       element: "p",
-      property: "height",
-      to: "100px"
+      val: "100px"
     });
   });
   $("#btnTo").addEventListener("click", function(){
     transition({
       element: "p",
-      property: "height",
-      to: "auto"
+      val: "auto"
     });
   });
   $("#btnAdd").addEventListener("click", function(){
