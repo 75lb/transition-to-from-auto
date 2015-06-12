@@ -5,6 +5,7 @@
   "contributors": [
     "Bogdan Chadkin <trysound@yandex.ru>"
   ],
+  "license": "MIT",
   "description": "perform CSS transitions to and from 'auto'",
   "repository": "https://github.com/75lb/transition-to-from-auto.git",
   "main": "./lib/transition-to-from-auto.js",
@@ -19,6 +20,7 @@
     "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
   },
   "devDependencies": {
+    "jsdoc-to-markdown": "^1.1.1",
     "requirejs": "^2.1.14"
   }
 }

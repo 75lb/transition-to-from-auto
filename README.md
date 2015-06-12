@@ -2,14 +2,14 @@
 [![npm module downloads per month](http://img.shields.io/npm/dm/transition-to-from-auto.svg)](https://www.npmjs.org/package/transition-to-from-auto)
 [![Dependency Status](https://david-dm.org/75lb/transition-to-from-auto.svg)](https://david-dm.org/75lb/transition-to-from-auto)
 
-#transition-to-from-auto
+# transition-to-from-auto
 This module exports a single function to transition an element either to or from `auto`. At the moment, this is not possible (see [webkit](https://bugs.webkit.org/show_bug.cgi?id=16020) and [firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=571344) bugs).
 
 [Demo](http://75lb.github.io/transition-to-from-auto/).
 
 Compatible with CommonJS (browserify), AMD (requirejs) or plain JS. 
 
-##Synopsis
+## Synopsis
 ```js
 transition({
   selector: "p",
@@ -19,7 +19,7 @@ transition({
 });
 ```
 
-##Install
+## Install
 ```sh
 $ npm install transition-to-from-auto --save
 ```
@@ -29,22 +29,25 @@ $ bower install transition-to-from-auto --save
 ```
 *Mac / Linux users may need to run with `sudo`*.
 
-##Usage
+## Usage
 See the [example](https://github.com/75lb/transition-to-from-auto/tree/master/example) folder for examples.
 
-##API
-<a name="exp_module_transition-to-from-auto"></a>
-##transition(options) ⏏
+## API
+<a name="exp_module_transition-to-from-auto--transition"></a>
+### transition(options) ⏏
 transition to and from auto
 
-**Params**
+**Kind**: Exported function  
 
-- options `Object` - the options  
-  - selector `string` - the element selector  
-  - to `string` - the value to transition to  
-  - \[property\] `string` - the CSS property to transition, defaults to `width`  
-  - \[style\] `string` - the CSS transition style, defaults to `all 0.4s ease-in-out`  
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>Object</code> | the options |
+| options.element | <code>mixed</code> | the element or selector |
+| options.to | <code>string</code> | the value to transition to |
+| [options.property] | <code>string</code> | the CSS property to transition, defaults to `width` |
+| [options.style] | <code>string</code> | the CSS transition style, defaults to `all 0.4s ease-in-out` |
 
 
+* * * 
 
-*documented by [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown)*
+&copy; 2015 Lloyd Brookes <75pound@gmail.com>. Documented by [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown).
