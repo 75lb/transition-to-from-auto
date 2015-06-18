@@ -44,8 +44,8 @@ transition to and from auto
 | options | <code>Object</code> | the options |
 | options.element | <code>mixed</code> | the element or selector |
 | options.val | <code>string</code> | the transition destination |
-| [options.prop] | <code>string</code> | the CSS property to transition, defaults to `width` |
-| [options.style] | <code>string</code> | the CSS transition style, defaults to `all 0.4s ease-in-out` |
+| [options.prop] | <code>string</code> | the CSS property to transition, defaults to `height` |
+| [options.style] | <code>string</code> | the CSS transition style, defaults to css |
 
 
 * * *
