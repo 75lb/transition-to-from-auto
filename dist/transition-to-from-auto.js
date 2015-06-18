@@ -1,3 +1,9 @@
+/*!
+ * transition-to-from-auto 0.4.1
+ * https://github.com/75lb/transition-to-from-auto
+ * Copyright 2015 Lloyd Brookes <75pound@gmail.com>
+ */
+
 /**
 @module
 @alias transition
