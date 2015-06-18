@@ -1,20 +1,19 @@
-require([ "../lib/transition-to-from-auto" ], function(transition){
+require([ "../dist/transition-to-from-auto" ], function(transition){
 
     var $ = document.querySelector.bind(document);
 
     $("#btnFrom").addEventListener("click", function(){
       transition({
-        selector: "p",
-        property: "height",
-        style: "all 1s linear",
-        to: "100px"
+        element: "p",
+        val: "100px",
+        style: "all 1s"
       });
     });
     $("#btnTo").addEventListener("click", function(){
       transition({
-        selector: "p",
-        property: "height",
-        to: "auto"
+        element: "p",
+        val: "auto",
+        style: "all 1s"
       });
     });
     $("#btnAdd").addEventListener("click", function(){

@@ -6,7 +6,7 @@
     "Bogdan Chadkin <trysound@yandex.ru>"
   ],
   "description": "perform CSS transitions to and from 'auto'",
-  "main": "lib/transition-to-from-auto.js",
+  "main": "dist/transition-to-from-auto.js",
   "moduleType": [
     "amd",
     "globals",

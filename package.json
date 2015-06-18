@@ -1,6 +1,6 @@
 {
   "name": "transition-to-from-auto",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": "Lloyd Brookes <75pound@gmail.com>",
   "contributors": [
     "Bogdan Chadkin <trysound@yandex.ru>"
@@ -8,7 +8,7 @@
   "license": "MIT",
   "description": "perform CSS transitions to and from 'auto'",
   "repository": "https://github.com/75lb/transition-to-from-auto.git",
-  "main": "./lib/transition-to-from-auto.js",
+  "main": "dist/transition-to-from-auto.js",
   "keywords": [
     "css",
     "transition",
@@ -16,10 +16,17 @@
   ],
   "scripts": {
     "test": "tape test/*.js",
-    "lint": "jshint lib/*.js test/*.js; echo",
-    "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
+    "lint": "gulp lint",
+    "build": "gulp build",
+    "dev": "gulp dev",
+    "docs": "jsdoc2md -t jsdoc2md/README.hbs src/*.js > README.md; echo"
   },
   "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-size": "^1.2.1",
+    "gulp-uglify": "^1.2.0",
     "jsdoc-to-markdown": "^1.1.1",
     "requirejs": "^2.1.14"
   }
