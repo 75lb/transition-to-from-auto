@@ -1,0 +1,19 @@
+ui: tape
+html: ./test/test.html
+browsers:
+  - name: chrome
+    version: latest
+    platform: Linux
+  - name: ie
+    version: latest
+  - name: iphone
+    version: "latest"
+  - name: firefox
+    version: latest
+    platform: Linux
+  - name: ipad
+    version: "latest"
+  - name: safari
+    version: latest
+  - name: android
+    version: "latest"
