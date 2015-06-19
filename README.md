@@ -18,6 +18,9 @@ transition({
   to: "auto"
 });
 ```
+## Compatibility
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/ttfa.svg)](https://saucelabs.com/u/ttfa)
+
 
 ## Install
 ```sh
@@ -38,14 +41,12 @@ See the [example](https://github.com/75lb/transition-to-from-auto/tree/master/ex
 transition to and from auto
 
 **Kind**: Exported function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>Object</code> | the options |
-| options.element | <code>mixed</code> | the element or selector |
-| options.val | <code>string</code> | the transition destination |
-| [options.prop] | <code>string</code> | the CSS property to transition, defaults to `height` |
-| [options.style] | <code>string</code> | the CSS transition style, defaults to css |
+**Params**
+- options <code>Object</code> - the options
+  - .element <code>mixed</code> - the element or selector
+  - .val <code>string</code> - the transition destination
+  - [.prop] <code>string</code> - the CSS property to transition, defaults to `height`
+  - [.style] <code>string</code> - the CSS transition style, defaults to css
 
 
 * * *

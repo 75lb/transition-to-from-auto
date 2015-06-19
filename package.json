@@ -22,7 +22,7 @@
     "lint": "gulp lint",
     "build": "browserify lib/transition-to-from-auto.js --standalone transitionToFromAuto > dist/transition-to-from-auto.js",
     "dev": "gulp dev",
-    "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
+    "docs": "jsdoc2md -t jsdoc2md/README.hbs -p list lib/*.js > README.md; echo"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
