@@ -9,7 +9,7 @@ var jshint = require('gulp-jshint');
 gulp.task('lint', function () {
 	return gulp.src([
 			'test/*.js',
-			'src/*.js'
+			'lib/*.js'
 		])
 		.pipe(jshint())
 		.pipe(jshint.reporter())
@@ -17,7 +17,7 @@ gulp.task('lint', function () {
 
 gulp.task('build', function () {
 	var pkg = JSON.parse(fs.readFileSync('package.json', 'utf-8'));
-	return gulp.src('src/*.js')
+	return gulp.src('lib/*.js')
 		.pipe(header([
 			'/*!',
 			' * <%= name %> <%= version %>',
@@ -35,7 +35,7 @@ gulp.task('build', function () {
 
 gulp.task('dev', function () {
 	gulp.start('build');
-	gulp.watch('src/*.js', ['build'])
+	gulp.watch('lib/*.js', ['build'])
 });
 
 gulp.task('default', ['build']);

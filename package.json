@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://github.com/75lb/transition-to-from-auto.git"
   },
-  "main": "src/transition-to-from-auto.js",
+  "main": "lib/transition-to-from-auto.js",
   "keywords": [
     "css",
     "transition",
@@ -20,9 +20,9 @@
   "scripts": {
     "test": "tape test/*.js",
     "lint": "gulp lint",
-    "build": "browserify src/transition-to-from-auto.js --standalone transitionToFromAuto > dist/transition-to-from-auto.js",
+    "build": "browserify lib/transition-to-from-auto.js --standalone transitionToFromAuto > dist/transition-to-from-auto.js",
     "dev": "gulp dev",
-    "docs": "jsdoc2md -t jsdoc2md/README.hbs src/*.js > README.md; echo"
+    "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
