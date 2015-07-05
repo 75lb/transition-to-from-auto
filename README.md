@@ -39,6 +39,12 @@ $ bower install transition-to-from-auto --save
 See the [example](https://github.com/75lb/transition-to-from-auto/tree/master/example) folder for examples.
 
 ## API
+
+* [transition-to-from-auto](#module_transition-to-from-auto)
+  * [transition(options)](#exp_module_transition-to-from-auto--transition) ⏏
+    * [.prop](#module_transition-to-from-auto--transition.prop) : <code>string</code>
+    * [.end](#module_transition-to-from-auto--transition.end) : <code>string</code>
+
 <a name="exp_module_transition-to-from-auto--transition"></a>
 ### transition(options) ⏏
 **Kind**: Exported function  
@@ -49,6 +55,26 @@ See the [example](https://github.com/75lb/transition-to-from-auto/tree/master/ex
   - [.prop] <code>string</code> - The CSS property to transition, defaults to `"height"`
   - [.style] <code>string</code> - The desired value for the `transition` CSS property (e.g. `"height 1s"`). If specified, this value is added inline and will override your CSS. Leave this value blank if you already have it defined in your stylesheet.
 
+<a name="module_transition-to-from-auto--transition.prop"></a>
+#### transition.prop : <code>string</code>
+The name of the vendor-specific transition CSS property
+
+**Kind**: static property of <code>[transition](#exp_module_transition-to-from-auto--transition)</code>  
+**Example**  
+```js
+el.style[transition.prop + 'Duration'] = '1s';
+```
+<a name="module_transition-to-from-auto--transition.end"></a>
+#### transition.end : <code>string</code>
+The name of the [transition end event](https://developer.mozilla.org/en-US/docs/Web/Events/transitionend) in the current browser (typically `"transitionend"` or `"webkitTransitionEnd"`)
+
+**Kind**: static property of <code>[transition](#exp_module_transition-to-from-auto--transition)</code>  
+**Example**  
+```js
+el.addEventListener(transition.end, function(){
+    // the transition ended..
+});
+```
 
 * * *
 
