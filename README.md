@@ -3,24 +3,27 @@
 [![Dependency Status](https://david-dm.org/75lb/transition-to-from-auto.svg)](https://david-dm.org/75lb/transition-to-from-auto)
 
 # transition-to-from-auto
-This module exports a single function to transition an element either to or from `auto`. At the moment, this is not possible (see [webkit](https://bugs.webkit.org/show_bug.cgi?id=16020) and [firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=571344) bugs).
+This module exports a single function to transition an element's height or width to or from `auto`. At the moment, this is not possible (see [webkit](https://bugs.webkit.org/show_bug.cgi?id=16020) and [firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=571344) bugs).
 
 [Demo](http://75lb.github.io/transition-to-from-auto/).
 
 Compatible with CommonJS (browserify), AMD (requirejs) or plain JS.
 
 ## Synopsis
+Transition the height of the `p.bio` element from its current value to `auto`:
 ```js
 transition({
-  selector: "p",
-  property: "height",
+  element: "p.bio",
+  prop: "height",
   style: "height 0.4s ease-in-out",
-  to: "auto"
+  val: "auto"
 });
 ```
-## Compatibility
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/ttfa.svg)](https://saucelabs.com/u/ttfa)
 
+Assuming that `p.bio` already has a `transition` value defined in CSS, and that you're transitioning `height` (the default property), it can be written more concisely like this: 
+```js
+transition({ element: "p.bio", val: "250px" });
+```
 
 ## Install
 ```sh
@@ -38,15 +41,13 @@ See the [example](https://github.com/75lb/transition-to-from-auto/tree/master/ex
 ## API
 <a name="exp_module_transition-to-from-auto--transition"></a>
 ### transition(options) ⏏
-transition to and from auto
-
 **Kind**: Exported function  
 **Params**
-- options <code>Object</code> - the options
-  - .element <code>mixed</code> - the element or selector
-  - .val <code>string</code> - the transition destination
-  - [.prop] <code>string</code> - the CSS property to transition, defaults to `height`
-  - [.style] <code>string</code> - the CSS transition style, defaults to css
+- options <code>Object</code>
+  - .element <code>string</code> | <code>element</code> - The DOM element or selector to transition
+  - .val <code>string</code> - The value you want to transition to
+  - [.prop] <code>string</code> - The CSS property to transition, defaults to `"height"`
+  - [.style] <code>string</code> - The desired value for the `transition` CSS property (e.g. `"height 1s"`). If specified, this value is added inline and will override your CSS. Leave this value blank if you already have it defined in your stylesheet.
 
 
 * * *
