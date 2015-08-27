@@ -1,6 +1,6 @@
 {
   "name": "transition-to-from-auto",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "author": "Lloyd Brookes <75pound@gmail.com>",
   "contributors": [
     "Bogdan Chadkin <trysound@yandex.ru>"
@@ -12,6 +12,9 @@
     "url": "https://github.com/75lb/transition-to-from-auto.git"
   },
   "main": "lib/transition-to-from-auto.js",
+  "files": [
+    "lib"
+  ],
   "keywords": [
     "css",
     "transition",
